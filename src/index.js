@@ -1,18 +1,21 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import { Provider } from "react-redux";
+import configureStore from "./redux/root";
+
 import { BrowserRouter } from "react-router-dom";
-import "tw-elements-react/dist/css/tw-elements-react.min.css";
-import "tw-elements/dist/css/tw-elements.min.css";
+// configure store
+const initialState = {};
+const store = configureStore(initialState);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  // <React.StrictMode>
-
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </BrowserRouter>
-  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,3 +1,51 @@
 .root {
-  @apply w-full flex flex-col p-5 items-center text-black;
+  @apply w-full flex flex-col items-center gap-[20px];
+
+  .searchField {
+    @apply w-[300px];
+    box-shadow: 0px 7px 12px 0px #64646f33;
+    & > label {
+      @apply text-[#656ec2] font-fira-sans font-bold;
+    }
+    & > div {
+      @apply bg-white;
+      &::after {
+        @apply border-0;
+      }
+      &::before {
+        @apply border-0;
+      }
+      &:hover::before {
+        @apply border-0;
+      }
+    }
+    & input {
+      @apply rounded-md text-[#656ec2] font-fira-sans text-[16px];
+    }
+  }
+
+  .jokeCount {
+    @apply font-fira-sans font-bold text-[14px];
+  }
+
+  .contentWrapper {
+    @apply w-full flex flex-wrap items-center justify-center gap-0 md:gap-x-[3%] mt-[40px] gap-y-[20px];
+
+    .joke {
+      @apply bg-white py-[40px] px-[10px] sm:px-[20px] lg:px-[40px] flex flex-col items-start justify-between;
+      box-shadow: 0px 7px 25px 0px #64646f33;
+
+      .content {
+        @apply text-[#282626] text-[16px] font-normal leading-[40px] overflow-y-auto break-words w-full;
+      }
+
+      .bottomWrapper {
+        @apply flex flex-wrap items-center justify-between w-full gap-y-[10px] sm:gap-y-0;
+
+        .bottomContent {
+          @apply text-[#767676] text-[12px] font-normal leading-[16px];
+        }
+      }
+    }
+  }
 }
